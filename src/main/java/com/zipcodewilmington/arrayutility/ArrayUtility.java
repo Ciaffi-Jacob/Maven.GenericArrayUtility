@@ -42,8 +42,8 @@ public class ArrayUtility<T> {
                 }
             }
             if(tempCount > highest){
-                mostFreq = arrayList.get(i);
-                highest = tempCount;
+                mostFreq = arrayList.get(i); //change mostFreq to current index
+                highest = tempCount; //update highest count
             }
 
         }
@@ -68,6 +68,10 @@ public class ArrayUtility<T> {
                 arrayList.remove(i);
             }
         }
-        return (T[]) arrayList.toArray();
+        T[] whatsLeft = (T[]) Array.newInstance(arrayList.get(0).getClass(), this.arrayList.size());
+        for (int i = 0; i < arrayList.size(); i++) {
+            whatsLeft[i] = arrayList.get(i);
+        }
+        return whatsLeft;
     }
 }
