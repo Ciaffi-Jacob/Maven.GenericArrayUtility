@@ -29,6 +29,18 @@ public class ArrayUtility<T> {
     }
 
     public T getMostCommonFromMerge(T[] arrayToMerge) {
+        this.arrayList.addAll(Arrays.asList(inputArray));
+        this.arrayList.addAll(Arrays.asList(arrayToMerge));
+        int tempCount;
+        int highest = 0;
+        int highestIndex = 0;
+        for (int i = 0; i < arrayList.size() -1; i++) {
+            tempCount = 0;
+            for (int j = 0; j < arrayList.size(); j++) { //compares current index and adds to tempCount
+
+            }
+
+        }
         return null;
     }
 
