@@ -33,15 +33,21 @@ public class ArrayUtility<T> {
         this.arrayList.addAll(Arrays.asList(arrayToMerge));
         int tempCount;
         int highest = 0;
-        int highestIndex = 0;
+        T mostFreq = null;
         for (int i = 0; i < arrayList.size() -1; i++) {
             tempCount = 0;
             for (int j = 0; j < arrayList.size(); j++) { //compares current index and adds to tempCount
-
+                if(arrayList.get(i) == arrayList.get(j)){
+                    tempCount++;
+                }
+            }
+            if(tempCount > highest){
+                mostFreq = arrayList.get(i);
+                highest = tempCount;
             }
 
         }
-        return null;
+        return mostFreq;
     }
 
     public Integer getNumberOfOccurrences(T valueToEvaluate) {
