@@ -16,12 +16,16 @@ public class ArrayUtility<T> {
 
     ArrayList<T> arrayList = new ArrayList<>();
 
-    public void toArrayList(T[] inputArray) {
-
-    }
-
     public Integer countDuplicatesInMerge(T[] arrayToMerge, T valueToEvaluate) {
-        return 0;
+        this.arrayList.addAll(Arrays.asList(inputArray));
+        this.arrayList.addAll(Arrays.asList(arrayToMerge));
+        Integer count = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) == valueToEvaluate) {
+                count += 1;
+            }
+        }
+        return count;
     }
 
     public T getMostCommonFromMerge(T[] arrayToMerge) {
